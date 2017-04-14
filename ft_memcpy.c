@@ -8,7 +8,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	i = 0;
 	tmp = dst;
-	so_tmp = *(unsigned char)src;
+	so_tmp = (unsigned char *)src;
 	while (i < n)
 	{
 		tmp[i] = so_tmp[i];
