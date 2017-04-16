@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 15:19:55 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/16 15:19:57 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/16 17:53:48 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int			i;
+	size_t		i;
 	size_t		j;
 
 	i = 0;
@@ -26,6 +26,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		s1[i + j] = s2[j];
 		j++;
 	}
-	s1[i] = '\0';
+	s1[i + j] = '\0';
 	return (s1);
 }
