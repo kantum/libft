@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/16 15:18:54 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/16 15:18:58 by qdurot           ###   ########.fr       */
+/*   Created: 2017/04/16 16:53:26 by qdurot            #+#    #+#             */
+/*   Updated: 2017/04/16 16:53:28 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int c)
+#include "libft.h"
+
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	size_t i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		else
+			i++;
+	}
+	if (s1[i] != s2[i])
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	else
 		return (0);
 }
