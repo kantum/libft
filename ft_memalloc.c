@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/16 15:19:52 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/18 21:00:48 by qdurot           ###   ########.fr       */
+/*   Created: 2017/04/17 16:51:29 by qdurot            #+#    #+#             */
+/*   Updated: 2017/04/17 16:52:24 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memalloc(size_t size)
 {
-	size_t	i;
+	void	*tmp;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (!(tmp = (void *)malloc(size)))
+		return (NULL);
+	return (tmp);
 }
