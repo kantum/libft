@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 20:07:12 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/18 23:08:12 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/19 17:43:11 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	unsigned int	len;
 	char			*ret;
-	
+
 	i = 0;
 	len = 0;
 	while (s[len])
