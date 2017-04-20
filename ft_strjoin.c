@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 20:42:17 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/20 19:53:21 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/20 22:55:41 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ret[len_s1 + i] = s2[i];
 		i++;
 	}
+	ret[len_s1 + len_s2] = '\0';
 	return (ret);
 }
