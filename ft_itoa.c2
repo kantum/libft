@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 20:54:41 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/20 23:21:20 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/23 14:57:36 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,15 @@
 char	*ft_strrev(char *str)
 {
 	int		i;
-	int		k;
 	char	*tmp;
 
 	i = 0;
-	k = 0;
-	while (str[k])
-		k++;
-	while (i < k)
+	while (str[i])
+		i++;
+	while (i)
 	{
 		tmp[i] = str[i];
-		i++;
+		i--;
 	}
 	return (tmp);
 }
@@ -43,6 +41,8 @@ char	*ft_itoa(int n)
 		if (!(ret = (char *)malloc(sizeof(char) * 12)))
 			return (0);
 		while (n /= 10)
+		{
+		}
 	}
 	else if (n < 0)
 	{

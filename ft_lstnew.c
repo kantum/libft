@@ -1,48 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/16 15:16:03 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/22 18:49:30 by qdurot           ###   ########.fr       */
+/*   Created: 2017/04/23 19:11:44 by qdurot            #+#    #+#             */
+/*   Updated: 2017/04/23 19:23:40 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	else
-		return (0);
-}
+	t_list	*first;
 
-int		ft_atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	result;
-
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
+	first = (t_list *)malloc(sizeof(t_list));
+	if (first)
 	{
-		sign = -1;
-		i++;
+		if (content)
+		{
+			first->content = (void *)content;
+			first->content_size = content_size;
+		}
+		else
+		{
+			first->content = NULL;
+			first->content_size = 0;
+		}
+		first->next = NULL;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]))
-	{
-		result *= 10;
-		result += (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	return (first);
 }

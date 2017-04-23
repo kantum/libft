@@ -1,48 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstdleone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/16 15:16:03 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/22 18:49:30 by qdurot           ###   ########.fr       */
+/*   Created: 2017/04/23 19:24:36 by qdurot            #+#    #+#             */
+/*   Updated: 2017/04/23 19:52:46 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	else
-		return (0);
-}
-
-int		ft_atoi(const char *str)
-{
-	int	i;
-	int	sign;
-	int	result;
-
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]))
-	{
-		result *= 10;
-		result += (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	del(&(*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }
