@@ -6,13 +6,13 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 20:19:10 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/23 18:20:06 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/24 18:52:54 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_count_field(char const *s, char c)
+static size_t	ft_count_field(char const *s, char c)
 {
 	size_t	i;
 	size_t	read;
@@ -35,7 +35,7 @@ size_t	ft_count_field(char const *s, char c)
 	return (field);
 }
 
-size_t	ft_field_len(char const *s, char c)
+static size_t	ft_field_len(char const *s, char c)
 {
 	size_t	i;
 	size_t	k;
@@ -49,7 +49,7 @@ size_t	ft_field_len(char const *s, char c)
 	return (k + i);
 }
 
-char	*ft_add_to_tab(char *tab, char const *field, char c)
+static char		*ft_add_to_tab(char *tab, char const *field, char c)
 {
 	size_t	i;
 	size_t	k;
@@ -73,7 +73,7 @@ char	*ft_add_to_tab(char *tab, char const *field, char c)
 	return (tab);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
