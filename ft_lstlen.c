@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 19:23:25 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/24 19:23:28 by qdurot           ###   ########.fr       */
+/*   Created: 2017/04/25 00:18:38 by qdurot            #+#    #+#             */
+/*   Updated: 2017/04/25 00:20:25 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+size_t	ft_lstlen(t_list *lst)
 {
-	while (*alst)
-	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = (*alst)->next;
-	}
+	size_t	i;
+
+	i = 0;
+	while (lst->next)
+		i++;
+	return (i);
 }

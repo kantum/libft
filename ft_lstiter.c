@@ -1,54 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 20:54:41 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/23 14:57:36 by qdurot           ###   ########.fr       */
+/*   Created: 2017/04/25 00:09:54 by qdurot            #+#    #+#             */
+/*   Updated: 2017/04/25 00:14:43 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+void			ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int		i;
-	char	*tmp;
-
-	i = 0;
-	while (str[i])
-		i++;
-	while (i)
+	while (lst->next)
 	{
-		tmp[i] = str[i];
-		i--;
+		f(lst);
+		lst = lst->next;
 	}
-	return (tmp);
-}
-
-char	*ft_itoa(int n)
-{
-	size_t	i;
-	size_t	len;
-	char	*ret;
-
-	i = 0;
-	len = 0;
-	if (n == -2147483648)
-	{
-		if (!(ret = (char *)malloc(sizeof(char) * 12)))
-			return (0);
-		while (n /= 10)
-		{
-		}
-	}
-	else if (n < 0)
-	{
-	}
-	else
-	{
-	}
-	return (ret);
+	f(lst);
 }
