@@ -6,29 +6,11 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 20:54:41 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/24 23:43:29 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/30 21:13:56 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_strrev(char *str)
-{
-	int		i;
-	int		k;
-	char	*tmp;
-
-	i = 0;
-	k = 0;
-	while (str[i])
-		i++;
-	if (!(tmp = (char *)malloc(sizeof(char) * (i + 1))))
-		return (NULL);
-	while (i)
-		tmp[k++] = str[i-- - 1];
-	tmp[k] = '\0';
-	return (tmp);
-}
 
 char		*ft_itoa(int n)
 {

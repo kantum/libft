@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 20:05:48 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/30 19:10:49 by qdurot           ###   ########.fr       */
+/*   Created: 2017/04/30 21:41:46 by qdurot            #+#    #+#             */
+/*   Updated: 2017/04/30 21:41:48 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strrev(char *str)
 {
-	size_t	i;
-	size_t	len;
-	char	*ret;
+	int		i;
+	int		k;
+	char	*tmp;
 
 	i = 0;
-	len = 0;
-	if (!s)
-		return (NULL);
-	while (s[len])
-		len++;
-	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
-		return (0);
-	while (s[i])
-	{
-		ret[i] = f(s[i]);
+	k = 0;
+	while (str[i])
 		i++;
-	}
-	ret[i] = '\0';
-	return (ret);
+	if (!(tmp = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	while (i)
+		tmp[k++] = str[i-- - 1];
+	tmp[k] = '\0';
+	return (tmp);
 }

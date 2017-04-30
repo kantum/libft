@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 20:19:10 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/24 18:52:54 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/30 19:02:49 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ char			**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s || !c)
+		return (NULL);
 	fields = ft_count_field(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * (fields + 1))))
 		return (0);

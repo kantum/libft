@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 20:07:12 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/19 17:43:11 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/30 19:10:19 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	len = 0;
+	if (!s)
+		return (NULL);
 	while (s[len])
 		len++;
 	if (!(ret = (char *)malloc(sizeof(char) * (len + 1))))
@@ -29,5 +31,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ret[i] = f(i, s[i]);
 		i++;
 	}
+	ret[i] = '\0';
 	return (ret);
 }

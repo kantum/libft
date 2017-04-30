@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 20:52:16 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/22 18:14:54 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/30 18:49:48 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	k = 0;
+	if (!s)
+		return (NULL);
 	len = (ft_strlen(s) - 1);
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
 	while (len && (s[len] == ' ' || s[len] == '\n' || s[len] == '\t'))
 		len--;
-	if (i > len)
+	if (i > len || !s[i])
 		return (ret = "");
 	else
 	{
-		if (!(ret = (char *)malloc(sizeof(char) * (len - i + 1))))
+		if (!(ret = (char *)malloc(sizeof(char) * (len - i + 2))))
 			return (NULL);
 	}
 	while (i <= len)

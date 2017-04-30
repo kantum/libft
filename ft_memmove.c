@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 15:15:48 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/16 19:10:49 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/27 19:14:07 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	so_tmp = (unsigned char *)src;
 	if (src < dst)
 	{
-		while ((int)len >= 0)
+		while ((int)len > 0)
 		{
 			len--;
 			tmp[len] = so_tmp[len];

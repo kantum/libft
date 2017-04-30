@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 16:53:55 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/16 21:19:57 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/04/30 17:40:22 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strstr(const char *big, const char *little)
 
 	i = 0;
 	j = 0;
+	if (!little[i])
+		return ((char *)big);
 	while (big[i])
 	{
 		if (little[j] == '\0')
