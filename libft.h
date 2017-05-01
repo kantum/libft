@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 15:20:25 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/30 21:08:03 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/05/01 19:05:50 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+int				ft_abs(int n);
+long int		labs(long n);
 char			*ft_strrev(char *str);
+int				ft_isspace(int c);
 
 #endif
