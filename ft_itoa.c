@@ -6,7 +6,7 @@
 /*   By: qdurot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 20:54:41 by qdurot            #+#    #+#             */
-/*   Updated: 2017/04/30 21:13:56 by qdurot           ###   ########.fr       */
+/*   Updated: 2017/05/01 17:54:08 by qdurot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_itoa(int n)
 	if (!(ret = (char *)malloc(sizeof(char) * 12)))
 		return (0);
 	if (n == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	sign = (n < 0) ? 1 : 0;
 	while (n != 0)
 	{
