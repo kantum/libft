@@ -2,7 +2,7 @@
 NAME	= libft.a
 
 DIR		= srcs
-SRCS		=															\
+SRCS	=															\
 	ft_abs.c		ft_atoi.c		ft_bzero.c		ft_isalnum.c	\
 	ft_isalpha.c	ft_isascii.c	ft_isdigit.c	ft_isprint.c	\
 	ft_isspace.c	ft_itoa.c		ft_labs.c		ft_lstadd.c		\
@@ -32,10 +32,11 @@ ARFLAGS = 	rcs
 
 all:$(NAME)
 
-$(NAME):
-	@$(CC) -c $(SRC) -I $(HEADERS) $(CFLAGS)
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
+$(NAME): $(OBJECTS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 
+$(OBJECTS): $(SRC) $(HEADERS)
+	$(CC) -c $(SRC) -I $(HEADERS) $(CFLAGS)
 clean:
 	@/bin/rm -f $(OBJECTS)
 
