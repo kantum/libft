@@ -33,10 +33,10 @@ ARFLAGS = 	rcs
 all:$(NAME)
 
 $(NAME): $(OBJECTS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJECTS)
 
 $(OBJECTS): $(SRC) $(HEADERS)
-	$(CC) -c $(SRC) -I $(HEADERS) $(CFLAGS)
+	@$(CC) -c $(SRC) -I $(HEADERS) $(CFLAGS)
 clean:
 	@/bin/rm -f $(OBJECTS)
 
