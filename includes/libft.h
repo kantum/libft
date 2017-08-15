@@ -12,9 +12,12 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <sys/uio.h>
+# include <sys/types.h>
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -89,5 +92,9 @@ int				ft_abs(int n);
 long int		labs(long n);
 char			*ft_strrev(char *str);
 int				ft_isspace(int c);
+
+int				get_next_line(const int fd, char **line);
+
+# define BUFF_SIZE 1023
 
 #endif
