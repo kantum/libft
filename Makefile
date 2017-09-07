@@ -18,7 +18,8 @@ SRCS	=															\
 	ft_strmapi.c	ft_strncat.c	ft_strncmp.c	ft_strncpy.c	\
 	ft_strnequ.c	ft_strnew.c		ft_strnstr.c	ft_strrchr.c	\
 	ft_strrev.c		ft_strsplit.c	ft_strstr.c		ft_strsub.c		\
-	ft_strtrim.c	ft_tolower.c	ft_toupper.c	get_next_line.c
+	ft_strtrim.c	ft_tolower.c	ft_toupper.c	get_next_line.c	\
+	ft_getnline.c
 
 SRC		= $(addprefix $(DIR)/,$(SRCS))
 OBJECTS = $(SRCS:.c=.o)

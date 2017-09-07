@@ -95,6 +95,8 @@ int				ft_isspace(int c);
 
 int				get_next_line(const int fd, char **line);
 
+int				ft_getnline(char *str);
+
 # define BUFF_SIZE 1023
 
 #endif
