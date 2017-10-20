@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 int	ft_getnline(char *str)
 {
@@ -26,5 +26,3 @@ int	ft_getnline(char *str)
 		k++;
 	return (k);
 }
-
-
