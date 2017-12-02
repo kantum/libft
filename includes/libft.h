@@ -97,6 +97,7 @@ int				get_next_line(const int fd, char **line);
 
 int				ft_getnline(char *str);
 void			ft_freetab(char **tab);
+int				ft_strlchr(char *str, char c);
 
 # define BUFF_SIZE 1023
 
