@@ -99,7 +99,7 @@ int				ft_getnline(char *str);
 void			ft_freetab(char **tab);
 int				ft_strlchr(char *str, char c);
 
-# define BUFF_SIZE	1024
+# define BUFF_SIZE	1
 # define FD_MAX		10240
 
 #endif
