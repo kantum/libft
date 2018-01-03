@@ -72,8 +72,8 @@ int				get_next_line(const int fd, char **line)
 	t_list			*node;
 	char			*free_ptr;
 
-	if (!(node = ft_node(&list, fd)) || line == NULL ||
-		read(fd, node->content, 0) < 0)
+	if (!(node = ft_node(&list, fd)) || fd > FD_MAX || fd < 0 ||
+			line == NULL || read(fd, node->content, 0) < 0)
 		return (-1);
 	ptr = ft_strchr(node->content, '\n');
 	if (!ptr)
@@ -88,6 +88,7 @@ int				get_next_line(const int fd, char **line)
 		return (1);
 	}
 	*line = ft_strdup(node->content);
+	free(node->content);
 	node->content = ft_strdup("\0");
 	return ((**line) ? 1 : 0);
 }
