@@ -14,9 +14,9 @@
 
 char		*ft_itoa(int n)
 {
-	size_t	i;
+	size_t		i;
 	static char	ret[12];
-	int		sign;
+	int			sign;
 
 	i = 0;
 	if (n == 0)
